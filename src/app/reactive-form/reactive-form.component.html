@@ -1,10 +1,10 @@
-<form fxLayoutGap="20px">
+<form [formGroup]="form" fxLayoutGap="20px">
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input
       matInput
       placeholder="Name"
-      name="name"
+      formControlName="name"
       required
     />
   </mat-form-field>
@@ -13,12 +13,14 @@
     <input
       matInput
       placeholder="Short Name"
-      name="shortName"
+      formControlName="shortName"
     />
   </mat-form-field>
   <button
     mat-raised-button
     color="primary"
+    (click)="onSubmit()"
+    [disabled]="!form.valid"
     >
     Submit
   </button>
