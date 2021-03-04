@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-template-form',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateFormComponent implements OnInit {
 
+  country : any = {};
   constructor() { }
 
   ngOnInit(): void {
+    this.country = { name: "Kazakhstan", shortName: "KZ" }
   }
 
+  onSubmit(form: FormGroup) {
+      console.log(form)
+      console.log(form.value)
+      console.log(form.status)
+      // http
+  }
 }

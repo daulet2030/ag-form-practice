@@ -1,9 +1,10 @@
-<form fxLayoutGap="20px">
+<form #form="ngForm" fxLayoutGap="20px">
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input
       matInput
       placeholder="Name"
+      [ngModel]="country.name"
       name="name"
       required
     />
@@ -13,12 +14,15 @@
     <input
       matInput
       placeholder="Short Name"
+      [ngModel]="country.shortName"
       name="shortName"
     />
   </mat-form-field>
   <button
     mat-raised-button
     color="primary"
+    (click)="onSubmit(form)"
+    [disabled]="!form.valid"
     >
     Submit
   </button>
