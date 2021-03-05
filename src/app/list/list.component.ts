@@ -15,7 +15,10 @@ export class ListComponent implements OnInit {
     this.service.getList().subscribe((result) => this.list = result);
   }
 
-  onEdit(id) {
-      console.log(id)
+  onDelete(id) {
+      this.service.delete(id).subscribe(()=> {
+        this.service.getList().subscribe((result) => this.list = result);
+
+      })
   }
 }

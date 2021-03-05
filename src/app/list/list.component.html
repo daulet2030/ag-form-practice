@@ -1,4 +1,4 @@
 <button routerLink="edit">Create</button>
 <div *ngFor="let item of list">
-  {{ item.name }} {{ item.shortName }} <button [routerLink]="'edit/'+item.id">edit</button>
+  {{ item.name }} {{ item.shortName }} <button [routerLink]="'edit/'+item.id">edit</button> <button (click)="onDelete(item.id)">delete</button>
 </div>

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CountryService {
+
   constructor(private http: HttpClient) { }
 
   getList(): Observable<any[]> {
@@ -22,6 +23,10 @@ export class CountryService {
   get(id: any): Observable<any> {
     return this.http.get<any>("/api/countries/" + id);
 
+  }
+
+  delete(id: any) {
+    return this.http.delete<any>("/api/countries/" + id);
   }
 
 }
