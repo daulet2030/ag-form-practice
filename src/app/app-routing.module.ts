@@ -5,7 +5,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   { path: "", component: ListComponent },
-  { path: "edit", component: ReactiveFormComponent}
+  { path: "edit", component: ReactiveFormComponent},
+  { path: "edit/:id", component: ReactiveFormComponent}
 ];
 
 @NgModule({
