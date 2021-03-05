@@ -1,3 +1,4 @@
+<button routerLink="edit">Create</button>
 <div *ngFor="let item of list">
   {{ item.name }} {{ item.shortName }} <button (click)="onEdit(item.id)">edit</button>
 </div>
