@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CountryService } from '../country.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class ReactiveFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private service: CountryService,
-    private activedRoute: ActivatedRoute
+    private activedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -35,11 +36,11 @@ export class ReactiveFormComponent implements OnInit {
 
     if (this.form.value.id) {
       this.service.edit(this.form.value).subscribe((result) => {
-        console.log(result);
+        this.router.navigate(['/'])
       });
     } else {
       this.service.create(this.form.value).subscribe((result) => {
-        console.log(result);
+        this.router.navigate(['/'])
       });
     }
   }
