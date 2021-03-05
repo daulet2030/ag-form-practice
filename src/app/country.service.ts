@@ -12,4 +12,9 @@ export class CountryService {
   getList(): Observable<any[]> {
     return this.http.get<any[]>("/api/countries");
   }
+
+  create(data: any): Observable<any> {
+    return this.http.post<any>("/api/countries", data);
+  }
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-reactive-form',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
 
   form : FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: CountryService) { }
 
   ngOnInit(): void {
 
@@ -24,6 +25,10 @@ export class ReactiveFormComponent implements OnInit {
    console.log(this.form)
    console.log(this.form.value)
    console.log(this.form.status )
+
+   this.service.create(this.form.value).subscribe((result) => {
+     console.log(result)
+   })
  }
 
 }
