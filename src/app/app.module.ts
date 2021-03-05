@@ -11,12 +11,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListComponent } from './list/list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
